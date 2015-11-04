@@ -127,3 +127,12 @@ void MainWindow::on_radioDilate_clicked()
 {
     image.setBasicOperationType(0);
 }
+
+void MainWindow::resizeEvent(QResizeEvent *e)
+{
+    QRect cr = contentsRect();
+    QRect sr = ui->scrollArea->geometry();
+    ui->scrollArea->setGeometry(QRect(sr.left(), sr.top(),
+                                      cr.width() - sr.left() - 3,
+                                      cr.height() - sr.top() - 50));
+}

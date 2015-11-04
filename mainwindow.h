@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include "image.h"
 
-
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +16,9 @@ public:
     Image image;
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+protected:
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
 
